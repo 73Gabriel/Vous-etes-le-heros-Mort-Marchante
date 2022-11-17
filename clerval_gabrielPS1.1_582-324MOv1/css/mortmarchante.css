@@ -1,0 +1,100 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #846c5b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    width: 700px;
+    min-height: 100px;
+    border-radius: 7px;
+    padding: 30px;
+}
+
+
+
+img {
+    width: 100%;
+    margin: 30px 0;
+}
+
+video {
+    width: 100%;
+    margin: 30px 0;
+}
+
+#imgOuVideo-container {
+    height: 340px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Special Elite', cursive;
+
+    color: white;
+
+}
+
+p {
+
+    font-family: 'Special Elite', cursive;
+    color: white;
+}
+
+
+
+#Container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+
+.button {
+    color: black;
+    border-radius: 4px;
+    background-color: rgb(201, 167, 56);
+    border: 3px solid white;
+    font-size: 20px;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline;
+    position: relative;
+    transition: 0.5s;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover span {
+    background-color: #d7dedc;
+}
+
+.button:hover {
+    padding-right: 20px;
+    background-color: #d7dedc;
+
+    box-shadow: 0 0 5px #d7dedc,
+        0 0 20px #d7dedc,
+        0 0 45px #d7dedc,
+        0 0 150px #d7dedc;
+}
