@@ -132,6 +132,8 @@ let chaptersObj = {
         subtitle: 'Vous êtes mort',
         text: 'Des survivants sortent de nulle part et vous tuent. FIN.',
         img: 'assets/trapsurvivor.png',
+
+
         options: [{
 
                 text: "Revenir au début.",
@@ -194,7 +196,7 @@ let chaptersObj = {
     },
 
 }
-
+let volume = 0;
 var audio;
 var audio2;
 var audio3;
@@ -234,6 +236,7 @@ function goToChapter(chap) {
         imgOuVideoPanel.innerHTML = "";
         imgOuVideoPanel.insertAdjacentHTML('beforeend', imgOuVideoTag);
 
+
     } else {
 
 
@@ -254,14 +257,17 @@ function goToChapter(chap) {
     if (chap != "KeyFound" && chap != "chapmortEmbuscade" && chap != "chapmortZombieShoot" && chap != "chapmortZombie" && chap != "mortCereales") {
         audio = new Audio('assets/changeChap.mp3');
         audio.play();
+        document.body.style.backgroundColor = "#846c5b"
     } else {
         if (chap != "chapmortEmbuscade" && chap != "chapmortZombieShoot" && chap != "chapmortZombie" && chap != "mortCereales") {
             audio2 = new Audio('assets/KeyfoundSE.mp3');
             audio2.play();
+            document.body.style.backgroundColor = "#846c5b"
         } else {
-            console.log("yo on est la broski mais en string string string string");
+            console.log("");
             audio3 = new Audio('assets/zombieAttack.mp3');
             audio3.play();
+            document.body.style.backgroundColor = "red"; //changement de couleur lorsque le personnage principal meurt
         }
 
     }
@@ -270,7 +276,7 @@ function goToChapter(chap) {
 
     localStorage.setItem("chaptersObj", chap);
 
-
+    currentChapter(chap);
 }
 
 // debut de chapitre
@@ -320,3 +326,30 @@ let isKeyFounded = function() {
 
 //  enregistre valeur de l'objet
 localSto();
+
+function currentChapter(chap) {
+    document.body.className = chap;
+
+}
+
+function reset() {
+    localStorage.clear();
+    goToChapter("chap1");
+
+
+}
+
+function soundOff() {
+    video.muted = true;
+    music.stop()
+    audio = true;
+    audio2 = true;
+    audio3 = true;
+    checkbox = document.getElementById("volume")
+    if (checkBox.checked == true) {
+        music.stop()
+
+    } else {
+
+    }
+}

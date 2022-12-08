@@ -8,8 +8,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-
-
 .game {
     display: flex;
     flex-direction: column;
@@ -21,8 +19,6 @@ body {
     border-radius: 7px;
     padding: 30px;
 }
-
-
 
 img {
     width: 100%;
@@ -43,18 +39,13 @@ video {
 
 h1 {
     font-family: 'Special Elite', cursive;
-
     color: white;
-
 }
 
 p {
-
     font-family: 'Special Elite', cursive;
     color: white;
 }
-
-
 
 #Container {
     display: flex;
@@ -64,7 +55,6 @@ p {
     margin: 25px 0;
     flex-wrap: wrap;
 }
-
 
 .button {
     color: black;
@@ -92,9 +82,29 @@ p {
 .button:hover {
     padding-right: 20px;
     background-color: #d7dedc;
+    box-shadow: 0 0 5px #d7dedc, 0 0 20px #d7dedc, 0 0 45px #d7dedc, 0 0 150px #d7dedc;
+}
 
-    box-shadow: 0 0 5px #d7dedc,
-        0 0 20px #d7dedc,
-        0 0 45px #d7dedc,
-        0 0 150px #d7dedc;
+.restart {
+    color: black;
+    border-radius: 4px;
+    background-color: rgb(201, 167, 56);
+    border: 3px solid white;
+    font-size: 20px;
+    padding: 15px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 120px;
+    left: 600px;
+    width: 160px;
+}
+
+.restart:hover {
+    padding-right: 20px;
+    background-color: #d7dedc;
+    box-shadow: 0 0 5px #d7dedc, 0 0 20px #d7dedc, 0 0 45px #d7dedc, 0 0 150px #d7dedc;
+}
+
+.son {
+    color: white;
 }
