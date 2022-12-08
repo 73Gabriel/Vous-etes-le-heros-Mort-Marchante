@@ -258,18 +258,15 @@ function goToChapter(chap) {
         audio = new Audio('assets/changeChap.mp3');
         audio.play();
         document.body.style.backgroundColor = "#846c5b"
-        element.style.fontFamily = "monospace";
     } else {
         if (chap != "chapmortEmbuscade" && chap != "chapmortZombieShoot" && chap != "chapmortZombie" && chap != "mortCereales") {
             audio2 = new Audio('assets/KeyfoundSE.mp3');
             audio2.play();
             document.body.style.backgroundColor = "#846c5b"
-            element.style.fontFamily = "monospace";
         } else {
             console.log("");
             audio3 = new Audio('assets/zombieAttack.mp3');
             audio3.play();
-            element.style.fontFamily = "monospace";
             document.body.style.backgroundColor = "red"; //changement de couleur lorsque le personnage principal meurt
         }
 
@@ -356,4 +353,3 @@ function soundOff() {
 
     }
 }
-localSto(audio)
