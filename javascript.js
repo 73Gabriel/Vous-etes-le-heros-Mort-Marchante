@@ -172,7 +172,7 @@ let chaptersObj = {
     },
     mortCereales: {
         subtitle: 'Vous êtes mort',
-        text: 'Je sais pas quoi dire... FIN.',
+        text: 'Sérieusement!?Avant les céréales... FIN.',
         img: 'assets/mort.jpg',
         options: [{
 
@@ -192,11 +192,12 @@ let chaptersObj = {
         options: [{
             text: "Revenir au début.",
             action: "goToChapter('chap1')"
+
         }]
     },
 
 }
-let volume = 0;
+
 var audio;
 var audio2;
 var audio3;
@@ -205,6 +206,8 @@ function goToChapter(chap) {
 
     document.getElementById("subtitle").innerHTML = chaptersObj[chap]["subtitle"];
     document.getElementById("text").innerHTML = chaptersObj[chap]["text"];
+    
+    
 
     let buttonPanel = document.getElementById('Container')
     let optionsArr = chaptersObj[chap].options;
@@ -216,8 +219,12 @@ function goToChapter(chap) {
         optionText = optionsArr[i].text;
         optionAction = optionsArr[i].action;
         buttonTag = `<button class="button" onclick="${optionAction}">${optionText}</button>`;
+        
         if (i == 0) {
             buttonPanel.innerHTML = buttonTag;
+           
+            
+
         } else {
             buttonPanel.insertAdjacentHTML('beforeend', buttonTag);
         }
@@ -254,29 +261,56 @@ function goToChapter(chap) {
         imgOuVideoPanel.insertAdjacentHTML('beforeend', imgOuVideoTag);
     }
     // son entre chapitre
+    checkbox = document.getElementById("checkbox")
+    if (checkbox.checked == true) {
+        
+
+
+    
     if (chap != "KeyFound" && chap != "chapmortEmbuscade" && chap != "chapmortZombieShoot" && chap != "chapmortZombie" && chap != "mortCereales") {
         audio = new Audio('assets/changeChap.mp3');
         audio.play();
-        document.body.style.backgroundColor = "#846c5b"
+        
     } else {
         if (chap != "chapmortEmbuscade" && chap != "chapmortZombieShoot" && chap != "chapmortZombie" && chap != "mortCereales") {
             audio2 = new Audio('assets/KeyfoundSE.mp3');
             audio2.play();
-            document.body.style.backgroundColor = "#846c5b"
+            
         } else {
-            console.log("");
+            
             audio3 = new Audio('assets/zombieAttack.mp3');
             audio3.play();
-            document.body.style.backgroundColor = "red"; //changement de couleur lorsque le personnage principal meurt
+          
         }
 
     }
+
+}
+if (chap != "KeyFound" && chap != "chapmortEmbuscade" && chap != "chapmortZombieShoot" && chap != "chapmortZombie" && chap != "mortCereales") {
+   
+    document.body.style.backgroundImage='none';
+    document.body.style.backgroundColor = "#846c5b"
+} else {
+    if (chap != "chapmortEmbuscade" && chap != "chapmortZombieShoot" && chap != "chapmortZombie" && chap != "mortCereales") {
+       
+        document.body.style.backgroundImage='none';
+        document.body.style.backgroundColor = "#846c5b"
+    } else {
+    
+       
+        
+        document.getElementById("text").style.fontFamily = "Impact,Charcoal,sans-serif";
+        document.body.style.backgroundImage ="url(assets/mortstyle.jpg)"; 
+    }
+
+}
 
 
 
     localStorage.setItem("chaptersObj", chap);
 
     currentChapter(chap);
+    soundOff();
 }
 
 // debut de chapitre
@@ -340,16 +374,19 @@ function reset() {
 }
 
 function soundOff() {
-    video.muted = true;
-    music.stop()
-    audio = true;
-    audio2 = true;
-    audio3 = true;
-    checkbox = document.getElementById("volume")
-    if (checkBox.checked == true) {
-        music.stop()
 
-    } else {
+    checkbox = document.getElementById("checkbox")
+    if (checkbox.checked == false) {
+         audio.muted==true;
+        audio2.muted==true;
+         audio3.muted==true;
+        
 
+
+    } else  {
+        audio.muted==false;
+        audio2.muted==false;
+         audio3.muted==false;
+        
     }
 }

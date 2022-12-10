@@ -97,6 +97,7 @@ p {
     top: 120px;
     left: 600px;
     width: 160px;
+    
 }
 
 .restart:hover {
@@ -105,6 +106,7 @@ p {
     box-shadow: 0 0 5px #d7dedc, 0 0 20px #d7dedc, 0 0 45px #d7dedc, 0 0 150px #d7dedc;
 }
 
-.son {
-    color: white;
+label {
+    color:white;
 }
+
